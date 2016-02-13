@@ -2,9 +2,9 @@
     "name": "Workflow",
     "workflow": {
         "type": "matchRule",
-        "operand": "name",
+        "operand": "customerId",
         "operator": "equalTo",
-        "value": "Craig",
+        "value": 1,
 
         "match": {
             "type": "url",
@@ -12,7 +12,7 @@
         },
         "noMatch": {
             "type": "url",
-            "url": "http://google.com"
+            "url": "http://communicatorcorp.com"
         }
     }
 }

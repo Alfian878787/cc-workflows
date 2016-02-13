@@ -1,7 +1,7 @@
 {
-  "name": "cc-dynamic-images",
+  "name": "cc-workflows",
   "version": "0.0.1-alpha",
-  "description": "Dynamic Image serving logic",
+  "description": "Dynamic Workflow server capable of serving up dfiferent responses based on pre-defined workflows and inputs parameters",
   "main": "index.js",
   "scripts": {
     "start": "node lib/index.js",

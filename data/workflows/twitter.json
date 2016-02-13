@@ -2,9 +2,9 @@
     "name": "Workflow",
     "workflow": {
         "type": "matchRule",
-        "operand": "name",
+        "operand": "username",
         "operator": "equalTo",
-        "value": "Craig",
+        "value": "craigsworks",
 
         "match": {
             "type": "twitter",
