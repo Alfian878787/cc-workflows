@@ -19,18 +19,18 @@ npm start
 Here's a list of sample URLs for each of the sample workflows included:
 
 ### `workflows/image.json`
-* http://localhost:3000/w/image?name=Craig&age=10&skills[]=JavaScript
-* http://localhost:3000/w/image?name=Craig&age=10
-* http://localhost:3000/w/image?name=Craig
-* http://localhost:3000/w/image
+* [http://localhost:3000/w/image?name=Craig&age=10&skills[]=JavaScript](http://localhost:3000/w/image?name=Craig&age=10&skills[]=JavaScript)
+* [http://localhost:3000/w/image?name=Craig&age=10](http://localhost:3000/w/image?name=Craig&age=10)
+* [http://localhost:3000/w/image?name=Craig](http://localhost:3000/w/image?name=Craig)
+* [http://localhost:3000/w/image](http://localhost:3000/w/image)
 
 ### `workflows/twitter.json`
-* http://localhost:3000/w/twitter?username=commcorp
-* http://localhost:3000/w/twitter?username=craigsworks
+* [http://localhost:3000/w/twitter?username=commcorp](http://localhost:3000/w/twitter?username=commcorp)
+* [http://localhost:3000/w/twitter?username=craigsworks](http://localhost:3000/w/twitter?username=craigsworks)
 
 ### `workflows/uRL.json`
-* http://localhost:3000/w/url?customerId=1
-* http://localhost:3000/w/url?customerId=2
+* [http://localhost:3000/w/url?customerId=1](http://localhost:3000/w/url?customerId=1)
+* [http://localhost:3000/w/url?customerId=2](http://localhost:3000/w/url?customerId=2)
 
 ## Workflows
 Workflows are stored under the `data/workflows` directory, which currently holds a few sample workflows for your consideration.
