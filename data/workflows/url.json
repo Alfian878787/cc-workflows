@@ -4,7 +4,7 @@
         "type": "matchRule",
         "operand": "customerId",
         "operator": "equalTo",
-        "value": 1,
+        "value": "1",
 
         "match": {
             "type": "url",
