@@ -1,7 +1,12 @@
 import pick from 'lodash/pick';
-import http from 'http';
+import winston from 'winston';
 import request from 'request';
 import { Caman } from 'caman';
+import Cache from '../cache';
+
+const CACHE = new Cache({
+    maxAge: 1000 * 60
+});
 
 const CAMAN_FILTERS = [
     'brightness',
@@ -61,6 +66,22 @@ export default function renderImage(result, req, res) {
         return request.get(result.url).pipe(res);
     }
 
+    // Generate a unique cache ID based on the URL and filters
+    let cacheId = [
+        result.url,
+        ...Object.values(filters)
+    ]
+    .join('|');
+
+    // Check the cache first
+    if (CACHE.has(cacheId)) {
+        let { timestamp, data: cachedImage } = CACHE.get(cacheId);
+
+        winston.info(`Using cached image from ${new Date(timestamp)}...`);
+
+        return res.type('png').send(cachedImage);
+    }
+
     // Otherwise buffer the image into memory
     let image = readImageUrl(result.url)
 
@@ -76,7 +97,11 @@ export default function renderImage(result, req, res) {
 
             // Render and stream to the response
             this.render(() => {
+                // Stream it out the browser
                 this.canvas.pngStream().pipe(res);
+
+                // Cache the reulting stream
+                CACHE.set(cacheId, this.canvas.toBuffer());
             });
         });
     })

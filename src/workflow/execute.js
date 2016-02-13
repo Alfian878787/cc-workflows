@@ -40,12 +40,8 @@ export default function execute(definition, params) {
             isMatch = executeGroup(definition, params);
             break;
 
-        case 'image':
-        case 'asset':
-            return definition;
-
         default:
-            throw new Error('Encountered invalid type: ' + definition.type);
+            return definition;
     }
 
     if (isMatch) {

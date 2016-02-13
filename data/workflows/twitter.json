@@ -1,0 +1,18 @@
+{
+    "name": "Workflow",
+    "workflow": {
+        "type": "matchRule",
+        "operand": "name",
+        "operator": "equalTo",
+        "value": "Craig",
+
+        "match": {
+            "type": "twitter",
+            "username": "craigsworks"
+        },
+        "noMatch": {
+            "type": "twitter",
+            "username": "commcorp"
+        }
+    }
+}
