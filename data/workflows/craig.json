@@ -1,0 +1,49 @@
+{
+    "name": "Workflow",
+    "workflow": {
+        "type": "matchRule",
+        "operand": "name",
+        "operator": "equalTo",
+        "value": "Craig",
+
+        "match": {
+            "type": "matchRule",
+            "operand": "age",
+            "operator": "lessThan",
+            "value": 30,
+
+            "match": {
+                "type": "group",
+                "condition": "or",
+                "rules": [{
+                    "type": "rule",
+                    "operand": "skills",
+                    "operator": "in",
+                    "value": ["JavaScript", "HTML", "CSS"]
+                }, {
+                    "type": "rule",
+                    "operand": "employment",
+                    "operator": "in",
+                    "value": ["Unemployed"]
+                }],
+
+                "match": {
+                    "type": "image",
+                    "url": "https://i.imgur.com/MeTugOZ.jpg"
+                },
+                "noMatch": {
+                    "type": "image",
+                    "url": "https://i.imgur.com/g0002Z2.jpg"
+                }
+            },
+            "noMatch": {
+                "type": "image",
+                "url": "https://i.imgur.com/A9h3sWP.jpg"
+            }
+        },
+        "noMatch": {
+            "type": "image",
+            "url": "https://i.imgur.com/UgRDkdQ.png"
+        }
+    }
+}

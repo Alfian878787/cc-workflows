@@ -1,0 +1,49 @@
+{
+    "name": "Workflow",
+    "workflow": {
+        "type": "matchRule",
+        "operand": "name",
+        "operator": "equalTo",
+        "value": "Craig",
+
+        "match": {
+            "type": "matchRule",
+            "operand": "age",
+            "operator": "lessThan",
+            "value": 30,
+
+            "match": {
+                "type": "group",
+                "condition": "or",
+                "rules": [{
+                    "type": "rule",
+                    "operand": "skills",
+                    "operator": "in",
+                    "value": ["JavaScript", "HTML", "CSS"]
+                }, {
+                    "type": "rule",
+                    "operand": "employment",
+                    "operator": "in",
+                    "value": ["Unemployed"]
+                }],
+
+                "match": {
+                    "type": "image",
+                    "url": "MATCH:EMPLOYMENT_OR_SKILLS"
+                },
+                "noMatch": {
+                    "type": "image",
+                    "url": "NOMATCH:EMPLOYMENT_OR_SKILLS"
+                }
+            },
+            "noMatch": {
+                "type": "image",
+                "url": "NOMATCH:AGE"
+            }
+        },
+        "noMatch": {
+            "type": "image",
+            "url": "NOMATCH:NAME"
+        }
+    }
+}
